@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, maximum-scale=1">
+<title>Daily — Todo &amp; Habits</title>
+
+<!-- iOS "Add to Home Screen" support -->
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Daily">
+<meta name="theme-color" content="#4F46E5">
+<link rel="apple-touch-icon" href="icons/icon-180.png">
+<link rel="icon" href="icons/icon-192.png">
+<link rel="manifest" href="manifest.json">
+
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="app">
+
+  <header class="app-header">
+    <div class="header-top">
+      <div>
+        <h1 id="greeting">Hello 👋</h1>
+        <p id="today-date" class="subtle"></p>
+      </div>
+      <button id="theme-toggle" class="icon-btn" aria-label="Toggle theme">🌙</button>
+    </div>
+
+    <div class="progress-card">
+      <div class="progress-ring-wrap">
+        <svg viewBox="0 0 100 100" class="progress-ring">
+          <circle class="ring-bg" cx="50" cy="50" r="42"></circle>
+          <circle id="ring-fill" class="ring-fill" cx="50" cy="50" r="42"></circle>
+        </svg>
+        <div class="progress-ring-label">
+          <span id="progress-percent">0%</span>
+        </div>
+      </div>
+      <div class="progress-stats">
+        <p id="progress-text">No tasks yet today</p>
+        <p class="subtle" id="streak-text">🔥 0 day streak</p>
+      </div>
+    </div>
+  </header>
+
+  <main class="content">
+
+    <section class="tab-panel" id="panel-todos">
+      <div class="section-row">
+        <h2>Today's To-Dos</h2>
+        <span class="pill" id="todo-count">0</span>
+      </div>
+      <ul class="item-list" id="todo-list"></ul>
+      <p class="empty-state" id="todo-empty">Nothing on your list — add your first to-do below.</p>
+    </section>
+
+    <section class="tab-panel" id="panel-habits" hidden>
+      <div class="section-row">
+        <h2>Daily Habits</h2>
+        <span class="pill" id="habit-count">0</span>
+      </div>
+      <ul class="item-list" id="habit-list"></ul>
+      <p class="empty-state" id="habit-empty">No habits yet — build one below.</p>
+    </section>
+
+  </main>
+
+  <button class="fab" id="add-btn" aria-label="Add item">+</button>
+
+  <nav class="tab-bar">
+    <button class="tab-btn active" data-tab="todos">
+      <span class="tab-icon">✅</span>
+      <span>To-Dos</span>
+    </button>
+    <button class="tab-btn" data-tab="habits">
+      <span class="tab-icon">🔁</span>
+      <span>Habits</span>
+    </button>
+  </nav>
+
+</div>
+
+<!-- Add item sheet -->
+<div class="sheet-backdrop" id="sheet-backdrop">
+  <div class="sheet" id="sheet">
+    <div class="sheet-handle"></div>
+    <h3 id="sheet-title">New To-Do</h3>
+
+    <input type="text" id="item-input" class="text-input" placeholder="e.g. Reply to emails" maxlength="80" autocomplete="off">
+
+    <div class="field-row" id="habit-target-row" hidden>
+      <label for="habit-target">Times per day</label>
+      <div class="stepper">
+        <button type="button" id="target-minus" class="stepper-btn">−</button>
+        <span id="target-value">1</span>
+        <button type="button" id="target-plus" class="stepper-btn">+</button>
+      </div>
+    </div>
+
+    <div class="sheet-actions">
+      <button id="sheet-cancel" class="btn btn-secondary">Cancel</button>
+      <button id="sheet-save" class="btn btn-primary">Add</button>
+    </div>
+  </div>
+</div>
+
+<script src="js/app.js"></script>
+</body>
+</html>
