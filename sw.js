@@ -1,4 +1,4 @@
-const CACHE_NAME = 'daily-app-v1';
+const CACHE_NAME = 'ace-tennis-tracker-v1';
 const ASSETS = [
   './',
   './index.html',

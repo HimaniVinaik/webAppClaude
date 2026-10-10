@@ -1,12 +1,12 @@
 {
-  "name": "Daily — Todo & Habits",
-  "short_name": "Daily",
-  "description": "A simple daily to-do and habit tracker",
+  "name": "Ace — Tennis Progress Tracker",
+  "short_name": "Ace",
+  "description": "Track tennis matches, ratings, clubs, clinics, and improvement over time",
   "start_url": "./index.html",
   "scope": "./",
   "display": "standalone",
-  "background_color": "#4F46E5",
-  "theme_color": "#4F46E5",
+  "background_color": "#2E7D32",
+  "theme_color": "#2E7D32",
   "orientation": "portrait",
   "icons": [
     {
